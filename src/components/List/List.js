@@ -36,7 +36,7 @@ const List = ({ UserList, selectedData, UserFilteredList }) => {
   );
 }
 List.propTypes = {
-  selectedData: PropTypes.func.isRequired,
+  selectedData: PropTypes.func,
   UserList: PropTypes.array.isRequired
 };
 export default List;

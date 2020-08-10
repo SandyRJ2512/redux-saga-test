@@ -19,8 +19,8 @@ const PopupModal = ({ isOpen, toggle, selectedData, getUserEditList, selectedInd
 }
 PopupModal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
-  toggle: PropTypes.func.isRequired,
+  toggle: PropTypes.func,
   selectedData: PropTypes.object.isRequired,
-  getUserEditList: PropTypes.func.isRequired
+  getUserEditList: PropTypes.func
 };
 export default PopupModal;

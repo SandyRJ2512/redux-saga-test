@@ -4,3 +4,6 @@
   left: 28px;
   font-size: 14px;
 }
+.disabled {
+  cursor: not-allowed;
+}
