@@ -24,7 +24,7 @@ export const getUserListError = () => {
   }
 }
 
-export const testAction = () => {
+export const fetchUserListAction = () => {
   return { type: FETCH_USER_LIST_DATA }
 }
 

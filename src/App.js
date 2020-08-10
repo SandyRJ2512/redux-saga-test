@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux';
 import PopupModal from "./components/PopupModal/PopupModal";
 import List from "./components/List/List";
 import Search from "./components/Search/Search";
-import { getUserEditList, getUserSearchList, testAction } from './Action/action';
+import { getUserEditList, getUserSearchList, fetchUserListAction } from './Action/action';
 import { getUserListData, getUserListFilteredData } from './Reducers/reducer';
 
 function App(props) {
@@ -16,7 +16,7 @@ function App(props) {
   const [selectedIndex, setSelectedIndex] = useState(null);
 
   useEffect(() => {
-    props.testAction();
+    props.fetchUserListAction();
     props.getUserSearchList('');
   }, [])
 
@@ -60,7 +60,7 @@ App.propTypes = {
   UserFilteredList: PropTypes.array.isRequired,
   getUserEditList: PropTypes.func.isRequired,
   getUserSearchList: PropTypes.func.isRequired,
-  testAction: PropTypes.func.isRequired
+  fetchUserListAction: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
@@ -71,7 +71,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => bindActionCreators({
   getUserEditList: getUserEditList,
   getUserSearchList: getUserSearchList,
-  testAction: testAction
+  fetchUserListAction: fetchUserListAction
 }, dispatch)
 
 export default connect(
