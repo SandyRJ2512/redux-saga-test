@@ -18,7 +18,7 @@ const UserListReducer = (state = initialState, action) => {
       return {
         ...state,
         pending: false,
-        data: action.data,
+        data: action.data.data.userList,
       }
     case GET_USER_LIST_ERROR:
       return {
