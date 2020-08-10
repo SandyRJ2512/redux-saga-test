@@ -9,7 +9,7 @@ function* apiCall() {
   // API call to get List data
   try {
     const apiResponse = yield call(apiPath);
-    yield put(getUserListSuccess(apiResponse.data.result));
+    yield put(getUserListSuccess(apiResponse.data.userList));
   } catch(e) {
     yield put(getUserListError(e.message.statusText))
   }
