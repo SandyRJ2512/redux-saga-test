@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+input.text-input {
+  display: block;
+  width: 50%;
+  height: calc(1.35em + .75rem + 2px);
+  padding: 0.275rem 0.55rem;
+  font-family: Hind,sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.25;
+  color: #707070;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #707070;
+  border-radius: 4px;
+  -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.close {
+  position: absolute;
+  right: 6px;
+  top: 2px;
+  width: 25px;
+  height: 25px;
+  opacity: 0.3;
+  cursor: pointer;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 25px;
+  width: 2px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+
+.mainCode {
+  font-size: 14px;
+}
+.checkbox {
+  margin-top: 10px;
+}

@@ -1,0 +1,12 @@
+.modal-dialog {
+  max-width: 540px !important;
+}
+.modal-title-text {
+  font-size: 24px;
+}
+.modal-title { 
+  width: 100%;
+}
+.form-footer {
+  border-top: 1px solid #dee2e6;
+}
