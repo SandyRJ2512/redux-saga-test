@@ -41,7 +41,7 @@ const UserListReducer = (state = initialState, action) => {
         mainList.title.toLowerCase().includes(searchText.toLowerCase())
       );
 
-      if(searchText && !searchResult.length) searchResult = "Not found";
+      if(searchText && !searchResult.length) searchResult = [{body: "Data Not found"}];
 
       return {
         ...state,

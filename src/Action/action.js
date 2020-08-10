@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 export const FETCH_USER_LIST_DATA = 'FETCH_USER_LIST_DATA';
 export const GET_USER_LIST_PENDING = 'GET_USER_LIST';
 export const GET_USER_LIST_SUCCESS = 'GET_USER_LIST_SUCCESS';

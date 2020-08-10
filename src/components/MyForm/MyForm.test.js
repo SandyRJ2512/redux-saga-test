@@ -1,16 +1,21 @@
 import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
+import { render, fireEvent } from '@testing-library/react';
 import MyForm from './MyForm';
-import Adapter from 'enzyme-adapter-react-16';
- 
-Enzyme.configure({ adapter: new Adapter() })
 
-describe('Form Testing', () => {
-  test('Find error', () => {
-    const component = shallow(<MyForm />);
-    expect(component.find("#title").text());
-    // component.find("#submitForm").simulate("click", { target: { name: 'title', value: 'Sandip' } });
-    // component.find(".title").simulate("change", { target: { name: 'title', value: 'Sandip' } });
-    // component.find('input').at(0).simulate('change', { target: { name: 'title', value: 'sandip' } });
-  })
-})
+describe('<MyForm />', () => {
+  it('Rendering form data', () => {
+    const post = render(
+      <MyForm selectedData={{ title: 'Post Title', body: 'Post Body', selectedIndex: 1 }} />
+    );
+    expect(post.container).toBeTruthy();
+  });
+  it('Click on Cancel button', () => {
+    const toggle = jest.fn();
+    const { getByRole } = render(
+      <MyForm selectedData={{ title: 'Post Title', body: 'Post Body', selectedIndex: 1 }} toggle={toggle} />
+    );
+    const cancelButton = getByRole('button', { name: /cancel/i });
+    fireEvent.click(cancelButton);
+    expect(toggle.mock.calls.length).toEqual(1);
+  });
+});

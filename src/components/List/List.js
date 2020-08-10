@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './list.css';
 
 const List = ({ UserList, selectedData, UserFilteredList }) => {
-  const list = (UserFilteredList.length && UserFilteredList) || UserList;
+  const list = (UserFilteredList && (UserFilteredList.length && UserFilteredList)) || UserList;
   return (
     <Table>
       <thead>
@@ -17,20 +17,15 @@ const List = ({ UserList, selectedData, UserFilteredList }) => {
         </tr>
       </thead>
       <tbody>
-        {list && (typeof(list) !== 'string') && list.length && list.map((data, index) => (
+        {list && list.length ? list.map((data, index) => (
           <tr key={`${data.id}`} data-content={data.title}>
             <th scope="row">{data.id}</th>
             <th className="text-center">{data.userId}</th>
             <td>{data.title}</td>
             <td>{data.body}</td>
-            <td><Button color="info" className="edit" onClick={() => {selectedData(data, index)}}>Edit</Button></td>
+            <td>{data.id ? (<Button color="info" className="edit" name="edit" onClick={() => {selectedData(data, index)}}>Edit</Button>) : ''}</td>
           </tr>
-        ))}
-        {list && (typeof(list) === 'string') && (
-          <tr>
-            <td colspan="5" className="not-found pt-5"><h3 className="text-center">{list}</h3></td>
-          </tr>
-        )}
+        )) : ''}
       </tbody>
     </Table>
   );

@@ -48,10 +48,10 @@ function MyForm(props) {
         </FormGroup>
         <FormGroup row className="pt-3 mb-0 mt-4 form-footer">
           <Col sm={{ size: '3', offset: 6 }} className="text-right">
-            <Button color="primary" id="submitForm" onClick={() => {getUserEditList(formState); toggle();}} disabled={!formState.title || !formState.body} >Submit</Button>
+            <Button color="primary" name="submitForm" id="submitForm" onClick={() => {getUserEditList(formState); toggle();}} disabled={!formState.title || !formState.body} >Submit</Button>
           </Col>
           <Col sm={{ size: '3' }} className="">
-            <Button color="danger" onClick={() => {toggle()}}>Cancel</Button>
+            <Button color="danger" name="cancel" onClick={() => {toggle()}}>Cancel</Button>
           </Col>
         </FormGroup>
       </Form>
